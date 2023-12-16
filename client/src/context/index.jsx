@@ -7,7 +7,6 @@ export const TasksProvider = ({ children}) => {
 	const [history, setHistory] = useState([]);
 
 	const updateTasks = (newTasks) => {
-		setHistory(history => [...history, tasks]);
 		setTasks(newTasks);
 	}
 
