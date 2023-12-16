@@ -1,9 +1,10 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 import { authJsonHeader } from '../headers';
+import { encrypt, decrypt } from '../encryption';
 
 const DOMAIN = import.meta.env.VITE_DOMAIN; // Replace with your API base URL
 
-interface IBlog {
+export interface IBlog {
   id: number;
   title: string;
   content: string;
@@ -13,6 +14,14 @@ interface IBlogContent {
   title: string;
   content: string;
 }
+
+const encryptData = (data: string) => {
+  return encrypt(data);
+};
+
+const decryptData = (encryptedData: string) => {
+  return decrypt(encryptedData);
+};
 
 export const getBlogs = async (token: string): Promise<{ body: IBlog[] }> => {
   try {
@@ -28,6 +37,9 @@ export const getBlogs = async (token: string): Promise<{ body: IBlog[] }> => {
 
 export const createBlog = async (blogData: IBlogContent, token: string): Promise<IBlog> => {
   try {
+    // const encryptedData = encryptData(JSON.stringify(blogData));
+    // const decryptedData = decryptData(encryptedData);
+    // console.log('encrypted:',encryptedData,'decrypted:',decryptedData);
     const response = await axios.post('/blogs', {
       title: blogData.title,
       content: blogData.content,

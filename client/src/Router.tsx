@@ -10,6 +10,7 @@ import { whoamiService } from "./api/auth";
 import Home from "./pages/guest/Home";
 import Layout from "./pages/layout/Layout";
 import Blog from "./pages/auth/Blog";
+import Task from "./pages/auth/Task";
 
 const Router = () => {
 	const dispatch = useAppDispatch();
@@ -63,6 +64,7 @@ const Router = () => {
 							<>
 								<Route path="/dashboard" element={<Dashboard />} />
 								<Route path="/blog" element={<Blog />} />
+								<Route path="/task" element={<Task />} />
 								<Route path="*" element={<Navigate to="/dashboard" replace />} />
 							</>
 						) : (

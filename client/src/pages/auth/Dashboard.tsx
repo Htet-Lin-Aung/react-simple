@@ -6,9 +6,10 @@ const Dashboard = () => {
 	return (
 		<div className="w-screen h-screen flex items-center justify-center">
 			<div className="space-y-3">
-				<h1 className="text-5xl font-semibold">Dashboard</h1>
-				<pre className=" font-serif text-lg cursor-pointer">
-					{JSON.stringify(user)}
+				<h1 className="text-2xl font-semibold">Welcome To Dashboard</h1>
+				<pre className=" font-serif text-md cursor-pointer">
+					Username: {user.name} <br/>
+					Email: {user.email}
 				</pre>
 			</div>
 		</div>

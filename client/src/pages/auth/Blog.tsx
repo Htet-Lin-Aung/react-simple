@@ -23,7 +23,7 @@ const validationSchema = Yup.object({
 	title: Yup.string()
 	.required("Title is required"),
 	content: Yup.string()
-	.required("Password is required"),
+	.required("Content is required"),
 });
 
 interface IBlogForm {
@@ -126,7 +126,9 @@ const Blog: React.FC = () => {
                     />
                 </div>
                 <div className='text-center'>
-                <button type="submit" >{isEditing ? 'Update' : 'Add'} Blog</button>
+                  <button type="submit" className='bg-gray-700 rounded-md w-44 py-2 text-white text-center'>
+                    {isEditing ? 'Update' : 'Add'} Blog
+                  </button>
                 </div>
             </form>
             </div>

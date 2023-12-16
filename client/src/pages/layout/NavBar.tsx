@@ -26,6 +26,7 @@ const Navbar = ({ isAuthorized }: { isAuthorized: boolean }) => {
       <>
         <NavLink to="/dashboard" className="aria-[current=page]:text-blue-400">Dashboard</NavLink>
         <NavLink to="/blog" className="aria-[current=page]:text-blue-400">Blog</NavLink>
+        <NavLink to="/task" className="aria-[current=page]:text-blue-400">Task</NavLink>
         <NavLink to="/logout" onClick={handleLogout} className="aria-[current=page]:text-blue-400">Logout</NavLink>
       </>
     );
